@@ -1,0 +1,50 @@
+// QuickSort.cpp : Diese Datei enthält die Funktion "main". Hier beginnt und endet die Ausführung des Programms.
+//
+
+#include <iostream>
+#include <vector>
+#include <ctime>
+#include "SortingAlgorithm.h"
+
+class QuickSort : public SortingAlgorithm {
+private:
+    int partition(int lo, int hi) {
+        const int pivot = array.at(lo);
+        int i = lo, j = hi + 1;
+
+        while (true) {
+            while (array.at(++i) < pivot) if (i == hi) break;
+            while (array.at(--j) > pivot) if (j == lo) break;
+            if (i >= j) break;
+            this->swap(array, i, j);
+        }
+        this->swap(array, lo, j);
+        return j;
+    }
+public:
+    QuickSort() {}
+    QuickSort(std::vector<int> array) : SortingAlgorithm(array) {}
+
+    void sort(int lo, int hi) {
+        if (hi <= lo) return;
+        int j = partition(lo, hi);
+        sort(lo, j - 1);
+        sort(j + 1, hi);
+    }
+
+    void sort() override{
+        sort(0, array.size()-1);
+    }
+
+    void print() {
+        std::cout << "Quick Sort: ";
+        SortingAlgorithm::print();
+    }
+};
+
+int main()
+{
+    QuickSort quickSort;
+    quickSort.sort();
+    quickSort.print();
+}
