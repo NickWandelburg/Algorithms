@@ -1,4 +1,4 @@
-// SelectionSort.cpp : Diese Datei enthält die Funktion "main". Hier beginnt und endet die Ausführung des Programms.
+// SelectionSort.cpp : SelectionSort implementation
 //
 
 #include <iostream>
@@ -12,6 +12,7 @@ public:
     SelectionSort(std::vector<int> array) : SortingAlgorithm(array) {}
 
     void sort() override{
+        // Swap the current list item with the smallest item contained in the still unsorted list section
         for (size_t i = 0; i < array.size(); i++)
         {
             int currMinIndex = i;

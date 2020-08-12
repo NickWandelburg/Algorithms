@@ -1,4 +1,4 @@
-// StandardSort.cpp : Diese Datei enthält die Funktion "main". Hier beginnt und endet die Ausführung des Programms.
+// StandardSort.cpp : Usage of C++ STL sort algorithm
 //
 
 #include <iostream>

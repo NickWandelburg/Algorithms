@@ -1,4 +1,4 @@
-// ShellSort.cpp : Diese Datei enthält die Funktion "main". Hier beginnt und endet die Ausführung des Programms.
+// ShellSort.cpp : ShellSort implementation with an increment sequence h
 //
 
 #include <iostream>
@@ -11,6 +11,7 @@ public:
     ShellSort(std::vector<int> array) : SortingAlgorithm(array) {}
 
     void sort() override{
+        // Compare list items with distance h to each other and swap them if needed
         const int SIZE = array.size();
         int h = 1; 
         while (h < SIZE / 3) h = 3 * h + 1;
@@ -20,6 +21,7 @@ public:
                 for (int j = i; j >= h && (array.at(j - h) > array.at(j)); j-=h)
                     swap(array, j - h, j);
             }
+            // Decrease h sequentially
             h /= 3;
         }
     }

@@ -1,3 +1,5 @@
+// SortingAlgorithm.h : Base sorting algorithm class which declares and defines basic sorting properties and operations
+
 #pragma once
 #include <iostream>
 #include <vector>
