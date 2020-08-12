@@ -47,7 +47,6 @@ public:
 	int remove() {
 		/* Remove maximum (root) item of MaxHeap, replace it with the last item 
 		and determine the right position within the MaxHeap */
-		if (isEmpty()) return;
 		int val = heap.at(rootIndex);
 		heap.at(rootIndex) = heap.back();
 		heap.erase(--heap.end());
